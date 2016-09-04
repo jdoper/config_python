@@ -9,19 +9,19 @@ O pip é um instalador de bibliotecas Python, é muito útil para instalar as de
 Antes do pip, execute o comando abaixo para instalar duas dependências o python-dev e o python-setuptools.
 
 ```sh
-sudo apt-get install python-dev python-setuptools
+$ sudo apt-get install python-dev python-setuptools
 ```
 
 Ao executar o comando acima, o easy_install estará disponível, usando ele podemos instalar o pip.
 
 ```sh
-sudo easy_install pip
+$ sudo easy_install pip
 ```
 
 Outra ferramenta muito útil é o virtualenv, ele é usado para criar ambientes de trabalho isolados, que vão lhe ajudar quando estiver trabalhando com projetos que utlizam diferentes versões da mesma biblioteca. Instale usando o comando abaixo.
 
 ```sh
-sudo apt-get install python-virtualenv
+$ sudo apt-get install python-virtualenv
 ```
 
 </br>
@@ -30,13 +30,13 @@ sudo apt-get install python-virtualenv
 Com o comando abaixo, são instalados o postgres, gerenciador de banco de dados, e a ferramenta visual pgadmin3, para trabalhar com os bancos postgres em sua máquina.
 
 ```sh
-sudo apt-get install postgresql pgadmin3
+$ sudo apt-get install postgresql pgadmin3
 ```
 
 Agora vamos configurar a senha do usuário criado por padrão ao instalar o postgres, entre no postgres modo terminal com o comando abaixo.
 
 ```sh
-sudo -u postgres psql
+$ sudo -u postgres psql
 ```
 
 Agora altere a senha, se você não alterar a linha abaixo, a senha será 'postgres'.
@@ -49,6 +49,19 @@ Caso a alteração seja bem sucedida, ira aparecer no terminal "ALTER ROLE", par
 
 ```sh
 \q
+```
+
+Por último, instale a biblioteca dev do postgres, verifique a versão instalada.
+
+```sh
+$ sudo -u postgres psql --version
+psql (PostgreSQL) 9.X
+```
+
+De acordo com a versão mostrada (9.X), instale a versão correta da biblioteca.
+
+```sh
+$ sudo apt-get install postgresql-server-dev-9.X
 ```
 
 ***Pronto!!!*** Sua máquina está pronta para desenvolver projetos com Django e PostgreSQL.
