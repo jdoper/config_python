@@ -18,11 +18,31 @@ Ao executar o comando acima, o easy_install estará disponível, usando ele pode
 $ sudo easy_install pip
 ```
 
-Outra ferramenta muito útil é o virtualenv, ele é usado para criar ambientes de trabalho isolados, que vão lhe ajudar quando estiver trabalhando com projetos que utlizam diferentes versões da mesma biblioteca. Instale usando o comando abaixo.
+Outra ferramenta muito útil é o virtualenvwrapper, ele é usado para criar ambientes de trabalho, que vão lhe ajudar quando estiver trabalhando com projetos que utlizam diferentes versões da mesma biblioteca. Instale usando o comando abaixo.
 
 ```sh
-$ sudo apt-get install python-virtualenv
+$ sudo pip install virtualenvwrapper
 ```
+
+Agora é necessário realizar algumas configurações para que o virtualenvwrapper funcione corretamente, crie um novo diretório em sua home. Ele será usado para guardar os ambientes criados
+
+```sh
+$ mkdir ~/.virtualenvs
+```
+
+Abra seu arquivo ~/.bashrc.
+
+```sh
+$ gedit ~/.bashrc
+```
+
+Adicione as linhas abaixo no final do arquivo que foi aberto com o comando anterior, salve o mesmo e reinicie o computador, para que as modificações no bashrc sejam incorporadas ao sistema.
+
+```sh
+export WORKON_HOME=~/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+```
+
 
 </br>
 ### Instalando e configurando o banco de dados PostgreSQL
