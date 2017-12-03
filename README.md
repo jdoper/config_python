@@ -1,7 +1,7 @@
 # config_django
 Lista de comandos para configuração básica de uma máquina para desenvolvimento de aplicações Django.</br>
 
-***ANTES DE TUDO, ABRA O TERMINAL!!!***</br>
+**ANTES DE TUDO, ABRA O TERMINAL!!!**</br>
 
 ### Adicionando bibliotecas necessárias do Python
 
@@ -30,7 +30,7 @@ Agora é necessário realizar algumas configurações para que o virtualenvwrapp
 $ mkdir ~/.virtualenvs
 ```
 
-Abra seu arquivo ~/.bashrc.
+Abra seu arquivo ~/.bashrc. Caso você utilize o ZSH, abra o arquivo "~/.zshrc".
 
 ```sh
 $ gedit ~/.bashrc
@@ -43,8 +43,8 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-
 </br>
+
 ### Instalando e configurando o banco de dados PostgreSQL
 
 Com o comando abaixo, são instalados o postgres, gerenciador de banco de dados, e a ferramenta visual pgadmin3, para trabalhar com os bancos postgres em sua máquina.
@@ -85,3 +85,17 @@ $ sudo apt-get install postgresql-server-dev-9.X
 ```
 
 ***Pronto!!!*** Sua máquina está pronta para desenvolver projetos com Django e PostgreSQL.
+
+### Utilização
+
+Para criar uma nova virtualenv com o Python 2, execute o comando abaixo.
+
+```sh
+$ mkvirtualenv <nome da virtualenv>
+```
+
+Caso deseje criar uma virtualenv com Python 3, adicione o parametro mostrado.
+
+```sh
+$ mkvirtualenv --python=/usr/bin/python3 <nome da virtualenv>
+```
