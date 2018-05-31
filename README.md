@@ -5,7 +5,7 @@ Lista de comandos para configuração básica de uma máquina para desenvolvimen
 
 ***
 
-Caso deseje poupar tempo, basta utilizar o arquivo **install.sh** dentro desse repositório, para executar todas os comandos listados abaixo.
+Caso deseje poupar tempo, basta utilizar o arquivo **execute.sh** dentro desse repositório, para executar todas os comandos listados abaixo.
 
 ***
 
@@ -32,7 +32,7 @@ mkdir ~/.virtualenvs
 Abra seu arquivo ~/.bashrc. Caso você utilize o ZSH, abra o arquivo "~/.zshrc".
 
 ```sh
-$ gedit ~/.bashrc
+gedit ~/.bashrc
 ```
 
 Adicione as linhas abaixo no final do arquivo que foi aberto com o comando anterior.
@@ -60,7 +60,7 @@ sudo apt install python3-distutils
 Com o comando abaixo, são instalados o postgres, gerenciador de banco de dados, e a ferramenta visual pgadmin3, para trabalhar com os bancos postgres em sua máquina.
 
 ```sh
-$ sudo apt install postgresql postgresql-server-dev-10 pgadmin3
+sudo apt install postgresql postgresql-server-dev-10 pgadmin3
 ```
 
 Agora vamos configurar a senha do usuário criado por padrão ao instalar o postgres,  se você não alterar a linha abaixo, a senha será 'postgres'.
@@ -78,11 +78,11 @@ sudo -u postgres psql -c "ALTER USER postgres> PASSWORD 'postgres';"
 Para criar uma nova virtualenv com Python 2, execute o comando abaixo.
 
 ```sh
-$ mkvirtualenv <nome da virtualenv>
+mkvirtualenv <nome da virtualenv>
 ```
 
 Caso deseje criar uma virtualenv com Python 3, adicione o parametro mostrado.
 
 ```sh
-$ mkvirtualenv --python=/usr/bin/python3 <nome da virtualenv>
+mkvirtualenv --python=/usr/bin/python3 <nome da virtualenv>
 ```
