@@ -36,17 +36,24 @@ mkdir ~/.virtualenvs
 echo "export WORKON_HOME=~/.virtualenvs" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 
+# Necessario o comando abaixo para que as variaveis de ambiente do virtualenv sejam aplicadas a secao atual
+
+exec bash
+
 echo $'\n##############################################'
 echo "#    Instalando PostgreSQL e pgAdmin3...     #"
 echo $'##############################################\n'
 
-sudo apt install postgresql postgresql-server-dev-10 pgadmin3
+sudo apt install postgresql postgresql-server-dev-10
 
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 
-# Necessario o comando abaixo para que as variaveis de ambiente do virtualenv sejam aplicadas a secao atual
+read -p 'Deseja instalar o pgAdmin3? [s/n]' decisao
 
-exec bash
+if [ $decisao == 'S' ] || [ $decisao == 'n' ]
+then
+  sudo apt install pgadmin3
+fi
 
 echo $'\n##############################################'
 echo "#    Pronto, pode usar!                      #"
