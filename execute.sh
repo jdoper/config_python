@@ -20,6 +20,7 @@ echo "#    Instalando pip...                       #"
 echo $'##############################################\n'
 
 sudo apt install python-pip
+sudo apt install python3-distutils
 
 echo $'\n##############################################'
 echo "#    Instalando virtualenvwrapper...         #"
@@ -36,9 +37,10 @@ mkdir ~/.virtualenvs
 echo "export WORKON_HOME=~/.virtualenvs" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 
-# Necessario o comando abaixo para que as variaveis de ambiente do virtualenv sejam aplicadas a secao atual
+echo 'alias runserver="python manage.py runserver"' >> ~/.bashrc
+echo 'alias makemigrations="python manage.py makemigrations"' >> ~/.bashrc
+echo 'alias migrate="python manage.py migrate"' >> ~/.bashrc
 
-exec bash
 
 echo $'\n##############################################'
 echo "#    Instalando PostgreSQL e pgAdmin3...     #"
@@ -48,9 +50,9 @@ sudo apt install postgresql postgresql-server-dev-10
 
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 
-read -p 'Deseja instalar o pgAdmin3? [s/n]' decisao
+read -p 'Deseja instalar o pgAdmin3? [s/S]' decisao
 
-if [ $decisao == 'S' ] || [ $decisao == 'n' ]
+if [ $decisao == 's' ] || [ $decisao == 'S' ]
 then
   sudo apt install pgadmin3
 fi
@@ -58,3 +60,7 @@ fi
 echo $'\n##############################################'
 echo "#    Pronto, pode usar!                      #"
 echo $'##############################################\n'
+
+# Necessario o comando abaixo para que as variaveis de ambiente do virtualenv sejam aplicadas a secao atual
+
+exec bash

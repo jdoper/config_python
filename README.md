@@ -15,6 +15,7 @@ O pip é um instalador de bibliotecas Python, é muito útil para instalar as de
 
 ```sh
 sudo apt install python-pip
+sudo apt install python3-distutils
 ```
 
 Outra ferramenta muito útil é o virtualenvwrapper, usado para criar ambientes que vão lhe ajudar quando estiver trabalhando com projetos que utilizam diferentes versões da mesma biblioteca.
@@ -46,12 +47,6 @@ Por último atualize o terminal.
 
 ```sh
 exec bash
-```
-
-**ATENÇÃO!** Caso você use uma distribuição que utilize **KDE**, é necessário instalar o seguinte pacote.
-
-```sh
-sudo apt install python3-distutils
 ```
 
 
