@@ -61,7 +61,7 @@ sudo apt install postgresql postgresql-server-dev-10 pgadmin3
 Agora vamos configurar a senha do usuário criado por padrão ao instalar o postgres,  se você não alterar a linha abaixo, a senha será 'postgres'.
 
 ```sh
-sudo -u postgres psql -c "ALTER USER postgres> PASSWORD 'postgres';"
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 ```
 
 ##### Pronto!!! Sua máquina está pronta para desenvolver projetos com Django e PostgreSQL.
